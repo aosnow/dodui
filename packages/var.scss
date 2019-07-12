@@ -1,0 +1,28 @@
+// ------------------------------------------------------------------------------
+// name: var
+// author: 喵大斯( mschool.tech )
+// created: 2019/7/13
+// ------------------------------------------------------------------------------
+
+// dodui default Theme Variables
+// ----------------------------------------
+
+// Priority for mobile environment
+// ----------------------------------------
+// HTML
+$--html-font-size: 100px;
+
+// BODY
+$--body-font-family: 'Avenir', Helvetica, Arial, sans-serif;
+$--body-font-size: 14px;
+$--body-background-color: #fafafa;
+$--body-text-color: #222222;
+
+// Transition
+// ----------------------------------------
+$--all-transition: all .3s cubic-bezier(.645, .045, .355, 1) !default;
+$--fade-transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
+$--fade-linear-transition: opacity 200ms linear !default;
+$--md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
+$--border-transition-base: border-color .2s cubic-bezier(.645, .045, .355, 1) !default;
+$--color-transition-base: color .2s cubic-bezier(.645, .045, .355, 1) !default;
