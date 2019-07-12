@@ -3,7 +3,7 @@ import Vue from 'vue';
 import '@mudas/reset.css';
 import 'dodui/theme/core.scss';
 
-import App from './App.vue';
+import App from './App';
 
 Vue.config.productionTip = false;
 
