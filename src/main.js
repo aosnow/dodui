@@ -1,7 +1,7 @@
 import Vue from 'vue';
 
 import '@mudas/reset.css';
-import 'dodui/core.scss';
+import 'dodui/theme/core.scss';
 
 import App from './App.vue';
 

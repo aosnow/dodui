@@ -1,7 +1,7 @@
 {
   "name": "dodui",
   "version": "0.0.1-beta",
-  "description": "a ui based css",
+  "description": "a ui based css & js",
   "author": "mudas",
   "license": "MIT",
   "main": "dist/dodui.common.js",
