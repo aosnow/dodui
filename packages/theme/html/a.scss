@@ -1,0 +1,19 @@
+// ------------------------------------------------------------------------------
+// name: a
+// author: 喵大斯( h5devs.com/h5devs.net )
+// created: 2019.07.14
+// ------------------------------------------------------------------------------
+@import "../mixin/mixins";
+
+a {
+  color: $--link-color;
+  text-decoration: none;
+
+  //&:active {
+  //  background-color: $--link-active-color;
+  //}
+
+  &:hover {
+    color: $--link-hover-color;
+  }
+}

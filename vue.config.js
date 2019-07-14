@@ -71,8 +71,8 @@ module.exports = {
 
     // 路径别名
     config.resolve.alias.set('@', resolve('src'));
+    config.resolve.alias.set('demo', resolve('demo'));
     config.resolve.alias.set('dodui', resolve('packages'));
-    config.resolve.alias.set('@mudas/example', resolve('packages/index.js'));
 
     // 不生成 html
     // config.plugins.delete('html');

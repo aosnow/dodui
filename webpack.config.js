@@ -16,7 +16,7 @@ module.exports = {
     alias: {
       '@': resolve('src'),
       dodui: resolve('packages'),
-      '@mudas/example': resolve('packages/index.js')
+      demo: resolve('demo')
     }
   }
 };

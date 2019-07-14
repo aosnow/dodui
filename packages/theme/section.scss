@@ -1,0 +1,95 @@
+// ------------------------------------------------------------------------------
+// name: section
+// author: 喵大斯( h5devs.com/h5devs.net )
+// created: 2019.07.14
+// ------------------------------------------------------------------------------
+@import "./mixin/utils";
+@import "./mixin/mixins";
+
+@include b(section) {
+  color: $--color-text-regular;
+  padding: 0 $--section-padding;
+  background-color: $--color-white;
+  margin-bottom: $--section-margin;
+  overflow: hidden; // 保留头部圆角样式（原被头部背景遮挡）
+
+  @include when(shadow) {
+    box-shadow: $--box-shadow-light;
+  }
+
+  @include when(card) {
+    margin-left: $--section-margin;
+    margin-right: $--section-margin;
+    border-radius: $--border-radius-base;
+
+    @at-root {
+      @include e(head) {
+        margin-left: -$--section-padding;
+        margin-right: -$--section-padding;
+        background-color: $--background-color-light;
+
+        @include m(main) {
+          padding-left: $--section-padding;
+        }
+
+        @include m(more) {
+          padding-right: $--section-padding;
+        }
+      }
+    }
+  }
+
+  .head-style {
+    font-size: $--font-size-medium;
+    height: $--section-title-height;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .more-style {
+    font-size: $--font-size-base;
+    text-align: right;
+  }
+
+  .utils-ellipsis {
+    @include utils-ellipsis;
+  }
+
+  @include e(head) {
+    @extend .head-style;
+    line-height: $--section-title-height * 1.1;
+    border-bottom: .01rem solid $--border-color-extra-light;
+
+    @include m(main) {
+      @extend .utils-ellipsis;
+    }
+
+    @include m(more) {
+      @extend .more-style;
+      @extend .utils-ellipsis;
+    }
+  }
+
+  @include e(body) {
+    color: $--color-text-primary;
+    padding: $--section-body-padding;
+  }
+
+  @include e(foot) {
+    @extend .head-style;
+    color: $--color-text-secondary;
+    line-height: $--section-title-height * 0.9;
+    border-top: .01rem solid $--border-color-extra-light;
+
+    @include m(main) {
+      @extend .utils-ellipsis;
+      font-size: $--font-size-base;
+    }
+
+    @include m(more) {
+      @extend .more-style;
+      @extend .utils-ellipsis;
+    }
+  }
+
+}

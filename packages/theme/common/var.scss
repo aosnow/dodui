@@ -1,0 +1,162 @@
+// ------------------------------------------------------------------------------
+// name: var
+// author: 喵大斯( mschool.tech )
+// created: 2019/7/13
+// ------------------------------------------------------------------------------
+
+// dodui default Theme Variables
+// ----------------------------------------
+
+// Transition
+// ----------------------------------------
+$--all-transition: all .3s cubic-bezier(.645, .045, .355, 1) !default;
+$--fade-transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
+$--fade-linear-transition: opacity 200ms linear !default;
+$--md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
+$--border-transition-base: border-color .2s cubic-bezier(.645, .045, .355, 1) !default;
+$--color-transition-base: color .2s cubic-bezier(.645, .045, .355, 1) !default;
+
+// Color
+// ----------------------------------------
+/// Black & White
+$--color-white: #ffffff !default;
+$--color-black: #000000 !default;
+
+/// BrandColor
+$--color-primary: #4487f7 !default;
+$--color-success: #67d480 !default;
+$--color-warning: #f5bf5e !default;
+$--color-danger: #ee794f !default;
+$--color-info: #dddddd !default;
+
+// NeutralColor
+$--color-neutral-1: #303133 !default;
+$--color-neutral-2: #606266 !default;
+$--color-neutral-3: #909399 !default;
+$--color-neutral-4: #c0c4cc !default;
+$--color-neutral-5: #dcdfe6 !default;
+$--color-neutral-6: #e4e7ed !default;
+$--color-neutral-7: #ebeef5 !default;
+$--color-neutral-8: #f2f6fc !default;
+
+/// Text
+$--color-text-primary: $--color-neutral-1 !default;
+$--color-text-regular: $--color-neutral-2 !default;
+$--color-text-secondary: $--color-neutral-3 !default;
+$--color-text-placeholder: $--color-neutral-4 !default;
+
+/// Border
+$--border-color-base: $--color-neutral-5 !default;
+$--border-color-light: $--color-neutral-6 !default;
+$--border-color-lighter: $--color-neutral-7 !default;
+$--border-color-extra-light: $--color-neutral-8 !default;
+
+// Typography - 排版
+// ----------------------------------------
+$--font-path: 'fonts' !default;
+$--font-size-extra-large: .2rem !default;
+$--font-size-large: .18rem !default;
+$--font-size-medium: .16rem !default;
+$--font-size-base: .14rem !default;
+$--font-size-small: .13rem !default;
+$--font-size-extra-small: .12rem !default;
+
+$--font-weight-primary: 500 !default;
+$--font-weight-secondary: 100 !default;
+
+$--font-line-height-primary: .24rem !default;
+$--font-line-height-secondary: .16rem !default;
+$--font-color-disabled-base: #bbb !default;
+
+// Size
+// ----------------------------------------
+$--size-base: 14px !default;
+
+// z-index
+// ----------------------------------------
+$--index-normal: 1 !default;
+$--index-top: 1000 !default;
+$--index-popper: 2000 !default;
+
+// Background
+// ----------------------------------------
+/// BackgroundColor
+$--background-color-base: #f5f7fa !default;
+$--background-color-light: mix($--color-white, $--background-color-base, 58%);
+
+// Priority for mobile environment
+// ----------------------------------------
+/// HTML
+$--html-font-size: 100px !default;
+
+/// BODY
+$--body-font-family: 'Avenir', 'Helvetica, Arial', 'sans-serif' !default;
+$--body-font-size: $--size-base !default;
+$--body-background-color: $--background-color-base !default;
+$--body-text-color: $--color-text-primary !default;
+
+// Header
+// ----------------------------------------
+$--header-padding: 0 .2rem !default;
+
+// Main
+// ----------------------------------------
+$--main-padding: .2rem !default;
+
+// Section
+// ----------------------------------------
+$--section-margin: .1rem !default;
+$--section-padding: .2rem !default;
+$--section-title-height: .4rem !default;
+$--section-body-padding: .1rem 0 !default;
+
+// Footer
+// ----------------------------------------
+$--footer-padding: 0 .2rem !default;
+
+// Code
+// ----------------------------------------
+$--code-font-family: 'Courier New';
+$--code-font-size: $--font-size-base !default;
+$--code-color: $--color-text-regular !default;
+
+// Link
+// ----------------------------------------
+$--link-color: mix($--color-black, $--color-primary, 27%) !default;
+$--link-hover-color: $--color-primary !default;
+$--link-active-color: $--border-color-lighter !default; // mobile backgroundColor
+
+// Border
+// ----------------------------------------
+$--border-width-base: .04rem !default;
+$--border-style-base: solid !default;
+$--border-color-hover: $--color-text-placeholder !default;
+$--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
+$--border-radius-base: .04rem !default;
+$--border-radius-small: .02rem !default;
+$--border-radius-circle: 100% !default;
+
+// Box-shadow
+$--box-shadow-base: 0 .02rem .04rem rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) !default;
+$--box-shadow-dark: 0 .02rem .04rem rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12) !default;
+$--box-shadow-light: 0 .02rem .06rem 0 rgba(0, 0, 0, 0.06) !default;
+
+// Responsive breakpoints
+// ----------------------------------------
+/// small  小型
+$--sm: 768px !default;
+/// normal 正常（默认）
+$--md: 992px !default;
+/// large  大型
+$--lg: 1200px !default;
+/// huge  巨大（自适应巨幅或者大屏如电子屏）
+$--xl: 1920px !default;
+
+/// Breakpoints Map
+$--breakpoints: (
+  'xs' : (max-width: $--sm - 1),
+  'sm' : (min-width: $--sm),
+  'md' : (min-width: $--md),
+  'lg' : (min-width: $--lg),
+  'xl' : (min-width: $--xl)
+);
