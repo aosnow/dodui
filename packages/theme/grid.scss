@@ -1,0 +1,50 @@
+// ------------------------------------------------------------------------------
+// name: grid - 布局单位的父级容器
+// author: 喵大斯( mschool.tech )
+// created: 2019/7/19
+// ------------------------------------------------------------------------------
+@import "./mixin/utils";
+@import "./mixin/mixins";
+
+@include b(grid) {
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+
+  &:before,
+  &:after {
+    display: none;
+  }
+
+  @include when(vertical) {
+    flex-direction: column;
+  }
+
+  @include when(wrap) {
+    flex-wrap: wrap;
+  }
+  @include when(wrap-reverse) {
+    flex-wrap: wrap-reverse;
+  }
+
+  @include when(justify-center) {
+    justify-content: center;
+  }
+  @include when(justify-end) {
+    justify-content: flex-end;
+  }
+  @include when(justify-space-between) {
+    justify-content: space-between;
+  }
+  @include when(justify-space-around) {
+    justify-content: space-around;
+  }
+
+  @include when(align-middle) {
+    align-items: center;
+  }
+  @include when(align-bottom) {
+    align-items: flex-end;
+  }
+
+}

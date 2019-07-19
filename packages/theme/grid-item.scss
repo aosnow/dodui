@@ -1,0 +1,35 @@
+// ------------------------------------------------------------------------------
+// name: grid-item - 布局单位
+// author: 喵大斯( mschool.tech )
+// created: 2019/7/19
+// ------------------------------------------------------------------------------
+
+@import "./common/config";
+@import "./mixin/utils";
+@import "./mixin/mixins";
+
+@include b(grid-item) {
+
+  $--grid-split-num: 12;
+
+  @for $i from 0 through $--grid-split-num {
+    .col-#{$i} {
+      width: (1 / $--grid-split-num * $i * 100) * 1%;
+    }
+
+    .col-offset-#{$i} {
+      margin-left: (1 / $--grid-split-num * $i * 100) * 1%;
+    }
+
+    .col-pull-#{$i} {
+      position: relative;
+      right: (1 / $--grid-split-num * $i * 100) * 1%;
+    }
+
+    .col-push-#{$i} {
+      position: relative;
+      left: (1 / $--grid-split-num * $i * 100) * 1%;
+    }
+  }
+
+}

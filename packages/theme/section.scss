@@ -1,12 +1,21 @@
-// ------------------------------------------------------------------------------
-// name: section
-// author: 喵大斯( h5devs.com/h5devs.net )
-// created: 2019.07.14
-// ------------------------------------------------------------------------------
+/********************************************************************************
+
+ 区块组件（v0.0.1.20190715）
+ ------------------------------------------------------------------------------
+ 主要类名：d-section、d-section__head、d-section__body、d-section__foot
+ 应用场景：主要适用于移动端的内容块级组件，常用于类似“公众号文章块、普通内容块”等场景
+
+ ********************************************************************************/
 @import "./mixin/utils";
 @import "./mixin/mixins";
 
 @include b(section) {
+
+  $--logo-space-factor: 0.25;
+  $--logo-space: $--section-title-height * ($--logo-space-factor * 0.5);
+  $--logo-height: $--section-title-height * (1 - $--logo-space-factor);
+  $--logo-width: $--logo-height;
+
   color: $--color-text-regular;
   padding: 0 $--section-padding;
   background-color: $--color-white;
@@ -57,16 +66,32 @@
 
   @include e(head) {
     @extend .head-style;
-    line-height: $--section-title-height * 1.1;
+    line-height: $--section-title-height;
     border-bottom: .01rem solid $--border-color-extra-light;
+
+    @include m(logo) {
+      flex: 0 0 $--logo-width;
+      height: $--logo-width;
+      margin-left: $--section-padding * 0.5;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      top: $--logo-space;
+
+      & + [class$='main'] {
+        padding-left: $--section-padding * 0.5 !important;
+      }
+    }
 
     @include m(main) {
       @extend .utils-ellipsis;
+      flex: 1;
     }
 
     @include m(more) {
       @extend .more-style;
       @extend .utils-ellipsis;
+      flex: 0 0 20%;
     }
   }
 
@@ -78,7 +103,7 @@
   @include e(foot) {
     @extend .head-style;
     color: $--color-text-secondary;
-    line-height: $--section-title-height * 0.9;
+    line-height: $--section-title-height * 0.8;
     border-top: .01rem solid $--border-color-extra-light;
 
     @include m(main) {

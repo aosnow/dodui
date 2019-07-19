@@ -13,7 +13,9 @@
   "keywords": [],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name dodui packages/index.js",
+    "build:scss": "gulp",
+    "build:component": "vue-cli-service build --target lib --name dodui packages/index.js",
+    "build:app": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "pub": "npm publish --access=public"
