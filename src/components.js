@@ -4,10 +4,10 @@
 // created: 2019.07.15 上午 1:16
 // ------------------------------------------------------------------------------
 
-const Section = () => import('demo/demo-section');
+const Card = () => import('demo/demo-card');
 const Layout = () => import('demo/demo-grid');
 
 export default {
-  section: { path: '/section', component: Section, beta: { title: '内容块', desc: '一般适用于移动端大型内容区块' } },
-  layout: { path: '/grid', component: Layout, beta: { title: '网格布局', desc: '适用于响应式布局' } }
+  card: { path: '/card', component: Card, beta: { title: '卡片', desc: '一般适用于卡片型内容区块' } },
+  grid: { path: '/grid', component: Layout, beta: { title: '网格布局', desc: '适用于响应式布局' } }
 };

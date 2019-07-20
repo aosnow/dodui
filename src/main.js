@@ -3,7 +3,8 @@ import RouterConf from './router/config';
 
 import '@mudas/reset.css';
 import 'dodui/theme/core.scss';
-import 'dodui/theme/dodui-html.scss';
+import 'dodui/theme/html.scss';
+import 'dodui/theme/dodui.scss';
 
 import App from './App';
 

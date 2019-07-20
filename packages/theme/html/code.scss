@@ -3,9 +3,9 @@
 // author: 喵大斯( h5devs.com/h5devs.net )
 // created: 2019.07.14
 // ------------------------------------------------------------------------------
-@import "../mixin/mixins";
+@import "../common/var";
 
-code {
+code, .code {
   // 颜色由父级继承或者外部设置，此处不主动设置，以免外界颜色设置无效
   //color: $--code-color;
 

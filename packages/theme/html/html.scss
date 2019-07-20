@@ -1,0 +1,34 @@
+// ------------------------------------------------------------------------------
+// name: html
+// author: mudas( mschool.tech )
+// created: 2019.07.19
+// ------------------------------------------------------------------------------
+@import "../mixin/mixins";
+
+html {
+  //font-size: $--html-font-size;
+
+  @include media(xs) {
+    font-size: $--html-font-size * 0.875;
+  }
+
+  // 768
+  @include media(sm) {
+    font-size: $--html-font-size * 0.975;
+  }
+
+  // 1024
+  @include media(md) {
+    font-size: $--html-font-size;
+  }
+
+  // 1280
+  @include media(lg) {
+    font-size: $--html-font-size;
+  }
+
+  // 1920
+  @include media(xl) {
+    font-size: $--html-font-size * 1.25;
+  }
+}

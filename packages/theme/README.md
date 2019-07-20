@@ -20,7 +20,8 @@ dodui-html.css - 包含所有 html、component 样式
 // 请安装 "npm i @mudas/reset.css -S" 或引用自定义的 reset
 import '@mudas/reset.css'; // based of "YUI 3.18.1 (build f7e7bcb)"
 import 'dodui/css/core.css';
-import 'dodui/css/dodui-html.css';
+import 'dodui/css/html.css';
+import 'dodui/css/dodui.css';
 ```
 
 ## 只引用自定义组件
@@ -36,7 +37,7 @@ import '@mudas/reset.css';
 import 'dodui/css/core.css';
 
 // components you need
-import 'dodui/css/section.css';
+import 'dodui/css/card.css';
 ```
 
 # core.css 介绍（about core.css）
@@ -54,7 +55,7 @@ html {
 body {
   color: #303133;
   font-family: "Avenir", "Helvetica, Arial", "sans-serif";
-  font-size: 0.14rem;
+  font-size: .14rem;
   background-color: #f5f7fa;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; 

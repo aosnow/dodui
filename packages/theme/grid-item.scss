@@ -3,33 +3,57 @@
 // author: 喵大斯( mschool.tech )
 // created: 2019/7/19
 // ------------------------------------------------------------------------------
-
 @import "./common/config";
 @import "./mixin/utils";
 @import "./mixin/mixins";
 
+$--grid-split-num: 10 !default;
+$--grid-size: 100 / $--grid-split-num * 1% !default;
+
 @include b(grid-item) {
 
-  $--grid-split-num: 12;
+  flex: 1;
+  max-width: 100%;
+  min-width: $--grid-size;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-  @for $i from 0 through $--grid-split-num {
-    .col-#{$i} {
-      width: (1 / $--grid-split-num * $i * 100) * 1%;
-    }
-
-    .col-offset-#{$i} {
-      margin-left: (1 / $--grid-split-num * $i * 100) * 1%;
-    }
-
-    .col-pull-#{$i} {
-      position: relative;
-      right: (1 / $--grid-split-num * $i * 100) * 1%;
-    }
-
-    .col-push-#{$i} {
-      position: relative;
-      left: (1 / $--grid-split-num * $i * 100) * 1%;
+// 标准列宽（在所有视图尺寸下相同）
+@for $i from 0 through $--grid-split-num {
+  // 列宽
+  .col-#{$i} {
+    @if $i == 0 {
+      display: none;
+    } @else {
+      display: block;
+      flex: 0 0 $i * $--grid-size !important;
     }
   }
+  // 列偏移
+  .col-offset-#{$i} {
+    margin-left: $i * $--grid-size;
+  }
+}
 
+// 条件列宽（不同分辨率下的列宽 xs, sm, md, lg, xl）
+@each $break-point-name, $value in $--breakpoints {
+  @include media($break-point-name) {
+    @for $i from 0 through $--grid-split-num {
+      // 列宽
+      .col-#{$break-point-name}-#{$i} {
+        @if $i == 0 {
+          display: none;
+        } @else {
+          display: block;
+          flex: 0 0 $i * $--grid-size;
+        }
+      }
+      // 列偏移
+      .col-#{$break-point-name}-offset-#{$i} {
+        margin-left: $i * $--grid-size;
+      }
+    }
+  }
 }

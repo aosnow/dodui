@@ -3,9 +3,9 @@
 // author: 喵大斯( h5devs.com/h5devs.net )
 // created: 2019.07.14
 // ------------------------------------------------------------------------------
-@import "../mixin/mixins";
+@import "../common/var";
 
-a {
+a, .a {
   color: $--link-color;
   text-decoration: none;
 

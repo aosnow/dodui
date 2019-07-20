@@ -1,0 +1,28 @@
+// ------------------------------------------------------------------------------
+// name: view - 布局根容器
+// author: mudas( mschool.tech )
+// created: 2019.07.21
+// ------------------------------------------------------------------------------
+// 该组件主要应用于PC端，需要固定相对固定宽度的场景
+@import "./mixin/mixins";
+
+@include b(view) {
+
+  margin: 0 auto;
+
+  &:before, &:after {
+    display: none;
+  }
+
+  @each $break-point-name, $value in $--breakpoints-view-width {
+    @include media($break-point-name) {
+
+      width: $value;
+      min-width: $value;
+      max-width: $value;
+
+    }
+  }
+
+}
+

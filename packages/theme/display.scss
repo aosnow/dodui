@@ -1,0 +1,16 @@
+// ------------------------------------------------------------------------------
+// name: display
+// author: mudas( mschool.tech )
+// created: 2019.07.20
+// ------------------------------------------------------------------------------
+@import "./mixin/mixins";
+
+.hidden{
+  @each $break-point-name, $value in $--breakpoints-spec{
+    &-#{$break-point-name}{
+      @include media($break-point-name, $--breakpoints-spec){
+        display: none !important;
+      }
+    }
+  }
+}

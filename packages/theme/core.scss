@@ -9,22 +9,8 @@
 // 而为了修正内容区域的字体大小，将 body 再次修正为 14px 的默认字体大小。
 // 如此，则可以在未改变字体大小环境的情况下，依然能够快速通过 rem 进行设置尺寸、大小、位置、距离等。
 // ------------------------------------------------------------------------------
-@import "./common/var";
-
-html {
-  font-size: $--html-font-size;
-}
-
-body {
-  color: $--body-text-color;
-  font-family: $--body-font-family;
-  font-size: $--body-font-size;
-  background-color: $--body-background-color;
-
-  // 字体渲染抗锯齿，只对 MacOS 的 webkit、moz 有效，Windows 系统无区别
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import "./html/html";
+@import "./html/body";
 
 *, *:before, *:after {
   box-sizing: border-box;

@@ -75,6 +75,11 @@ module.exports = {
 
     // 增加资源识别路径（仍然不支持 style="background: url()" 的路径识别）
     config.module.rule('file').include.add('/demo/assets');
+    config.module.rule('postcss')
+          .test(/\.p(ost)?css$/)
+          .use('group-css-media-queries-loader')
+          .loader('group-css-media-queries-loader')
+          .end();
 
     // 路径别名
     config.resolve.alias.set('@', resolve('src'));

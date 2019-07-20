@@ -53,7 +53,6 @@ $--border-color-extra-light: $--color-neutral-8 !default;
 
 // Typography - 排版
 // ----------------------------------------
-$--font-path: 'fonts' !default;
 $--font-size-extra-large: .2rem !default;
 $--font-size-large: .18rem !default;
 $--font-size-medium: .16rem !default;
@@ -64,13 +63,21 @@ $--font-size-extra-small: .12rem !default;
 $--font-weight-primary: 500 !default;
 $--font-weight-secondary: 100 !default;
 
-$--font-line-height-primary: .24rem !default;
-$--font-line-height-secondary: .16rem !default;
+$--font-line-height-primary: 1.6 !default;
+$--font-line-height-secondary: 1.25 !default;
 $--font-color-disabled-base: #bbb !default;
 
-// Size
+// Margin
 // ----------------------------------------
-$--size-base: 14px !default;
+$--margin-small: .1rem !default;
+$--margin-base: .2rem !default;
+$--margin-large: .4rem !default;
+
+// Padding
+// ----------------------------------------
+$--padding-small: .1rem !default;
+$--padding-base: .2rem !default;
+$--padding-large: .4rem !default;
 
 // z-index
 // ----------------------------------------
@@ -90,10 +97,7 @@ $--background-color-light: mix($--color-white, $--background-color-base, 58%);
 $--html-font-size: 100px !default;
 
 /// BODY
-$--body-font-family: 'Avenir', 'Helvetica, Arial', 'sans-serif' !default;
-$--body-font-size: $--size-base !default;
-$--body-background-color: $--background-color-base !default;
-$--body-text-color: $--color-text-primary !default;
+$--body-font-family: Avenir, Helvetica, Arial, Microsoft Yahei, sans-serif !default;
 
 // Header
 // ----------------------------------------
@@ -105,10 +109,7 @@ $--main-padding: .2rem !default;
 
 // Section
 // ----------------------------------------
-$--section-margin: .1rem !default;
 $--section-padding: .2rem !default;
-$--section-title-height: .4rem !default;
-$--section-body-padding: .1rem 0 !default;
 
 // Footer
 // ----------------------------------------
@@ -116,7 +117,7 @@ $--footer-padding: 0 .2rem !default;
 
 // Code
 // ----------------------------------------
-$--code-font-family: 'Courier New', 'sans-serif';
+$--code-font-family: Courier New, Mono sans-serif;
 $--code-font-size: $--font-size-base !default;
 $--code-color: $--color-text-regular !default;
 
@@ -141,15 +142,31 @@ $--box-shadow-base: 0 .02rem .04rem rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .0
 $--box-shadow-dark: 0 .02rem .04rem rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12) !default;
 $--box-shadow-light: 0 .02rem .06rem 0 rgba(0, 0, 0, 0.06) !default;
 
+// Card
+// ----------------------------------------
+$--card-title-height: .4rem !default;
+
+// View
+// ----------------------------------------
+/// View Responsive Width
+$--breakpoints-view-width: (
+  'xs' : 100%, // grid width: 1
+  'sm' : 750px,
+  'md' : 960px,
+  'lg' : 1200px,
+  'xl' : 1600px
+);
+
 // Responsive breakpoints
 // ----------------------------------------
-/// small  小型
+/// xsmall  超小型 768px以下（移动设备竖屏）
+/// small  小型 768px（移动设备横屏）
 $--sm: 768px !default;
-/// normal 正常（默认）
-$--md: 992px !default;
-/// large  大型
-$--lg: 1200px !default;
-/// huge  巨大（自适应巨幅或者大屏如电子屏）
+/// normal 正常（默认） 1024px（旧式纯屏电脑、收银机等）
+$--md: 1024px !default;
+/// large  大型 1280px、1440px、1600px（主流液晶屏）
+$--lg: 1280px !default;
+/// huge  1920px 高清1080P（大型游戏液晶屏）
 $--xl: 1920px !default;
 
 /// Breakpoints Map
@@ -159,4 +176,19 @@ $--breakpoints: (
   'md' : (min-width: $--md),
   'lg' : (min-width: $--lg),
   'xl' : (min-width: $--xl)
+);
+
+/// Display Breakpoints Map
+$--breakpoints-spec: (
+  'xs-only' : (max-width: $--sm - 1), /// 当视口在 xs 尺寸时隐藏
+  'sm-and-up' : (min-width: $--sm), /// 当视口在 sm 及以上尺寸时隐藏
+  'sm-only': "(min-width: #{$--sm}) and (max-width: #{$--md - 1})", /// 当视口在 sm 尺寸时隐藏
+  'sm-and-down': (max-width: $--md - 1), /// 当视口在 sm 及以下尺寸时隐藏
+  'md-and-up' : (min-width: $--md), /// 当视口在 md 及以上尺寸时隐藏
+  'md-only': "(min-width: #{$--md}) and (max-width: #{$--lg - 1})", /// 当视口在 md 尺寸时隐藏
+  'md-and-down': (max-width: $--lg - 1), /// 当视口在 md 及以下尺寸时隐藏
+  'lg-and-up' : (min-width: $--lg), /// 当视口在 lg 及以上尺寸时隐藏
+  'lg-only': "(min-width: #{$--lg}) and (max-width: #{$--xl - 1})", /// 当视口在 lg 尺寸时隐藏
+  'lg-and-down': (max-width: $--xl - 1), /// 当视口在 lg 及以下尺寸时隐藏
+  'xl-only' : (min-width: $--xl), /// 当视口在 xl 尺寸时隐藏
 );

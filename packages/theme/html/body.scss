@@ -1,0 +1,17 @@
+// ------------------------------------------------------------------------------
+// name: body
+// author: mudas( mschool.tech )
+// created: 2019.07.19
+// ------------------------------------------------------------------------------
+@import "../mixin/mixins";
+
+body {
+  color: $--color-text-primary;
+  font-family: $--body-font-family;
+  font-size: $--font-size-base;
+  background-color: $--background-color-base;
+
+  // 字体渲染抗锯齿，只对 MacOS 的 webkit、moz 有效，Windows 系统无区别
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
